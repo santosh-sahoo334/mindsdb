@@ -90,7 +90,7 @@ RUN python -m pip install --prefer-binary --no-cache-dir --upgrade pip==23.1.2 &
 ARG VERSION=23.7.2.0
 RUN pip install --no-cache-dir mindsdb${VERSION:+"==$VERSION"}
 
-COPY ./mindsdb_config.release.json /root/mindsdb_config.json
-COPY ./mindsdb_launcher.sh /root/
+COPY ./docker/mindsdb_config.release.json /root/mindsdb_config.json
+COPY ./docker/mindsdb_launcher.sh /root/
 
 CMD bash /root/mindsdb_launcher.sh start
