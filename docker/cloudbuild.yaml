@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/ts-cloud-factory-poc/github.com/santosh-sahoo334/mindsdb:${COMMIT_SHA}','/docker/Dockerfile']
+  args: ['build', '-t', 'gcr.io/ts-cloud-factory-poc/github.com/santosh-sahoo334/mindsdb:${COMMIT_SHA}','-f','./docker/Dockerfile','.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/ts-cloud-factory-poc/github.com/santosh-sahoo334/mindsdb:${COMMIT_SHA}']
 timeout: 9000s
