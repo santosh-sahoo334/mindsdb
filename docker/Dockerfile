@@ -83,9 +83,11 @@ RUN python -m pip install --prefer-binary --no-cache-dir --upgrade pip==23.1.2 &
     pip install --no-cache-dir google-api-python-client google-auth-httplib2 google-auth-oauthlib || true && \
     pip install --no-cache-dir 'llama-index==0.6.11' || true && \
     pip install --no-cache-dir 'wikipedia==1.4.0' 'langchain==0.0.146' || true && \
-    pip install --prefer-binary --no-cache-dir hugging_py_face || true 
+    pip install --prefer-binary --no-cache-dir hugging_py_face || true && \
+    pip install --no-cache-dir hierarchicalforecast==0.3.0
 
-ARG VERSION=
+
+ARG VERSION=23.7.2.0
 RUN pip install --no-cache-dir mindsdb${VERSION:+"==$VERSION"}
 
 COPY mindsdb_config.release.json /root/mindsdb_config.json
